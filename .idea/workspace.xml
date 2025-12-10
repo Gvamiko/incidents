@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="131dbabe-a018-4937-9879-5f328aeb7b3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gitingonre" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitingonre" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <updated>1762431020429</updated>
       <workItem from="1762431021514" duration="145000" />
       <workItem from="1765381743129" duration="3000" />
-      <workItem from="1765382042327" duration="58000" />
+      <workItem from="1765382042327" duration="177000" />
     </task>
     <servers />
   </component>
