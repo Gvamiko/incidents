@@ -161,32 +161,32 @@
             :key="row.id"
             class="hover:bg-blue-50/50 transition-colors border-b border-gray-100 last:border-b-0"
         >
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-500 align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-500 align-center">
             {{ index + 1 }}
           </td>
 
           <!-- ინციდენტის თარიღი -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-center">
             {{ formatDate(row.incident_date) }}
           </td>
 
           <!-- დაფიქსირების დრო -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-center">
             {{ row.incident_time }}
           </td>
 
           <!-- მისამართი -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-top min-w-[180px]">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-center min-w-[180px]">
             <div class="line-clamp-2">
               {{ row.address }}
             </div>
           </td>
 
           <!-- გამგზავნი -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-center">
             <span class="text-green-700 font-bold">{{ row.sender_fullname }}</span>
             <br>
-            <br>
+
             <span class="text-blue-700 font-bold">{{ row.receiver_fullname }}</span>
           </td>
 
@@ -196,7 +196,7 @@
 <!--          </td>-->
 
           <!-- დაზიანების ტიპი -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-top min-w-[200px]">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-center min-w-[200px]">
             <div class="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 border border-amber-100">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
               <span class="text-sm font-medium text-amber-800">
@@ -213,7 +213,7 @@
 <!--          </td>-->
 
           <!-- აღმოფხვრის დრო -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-center">
               <span v-if="row.fix_time">
                 {{ formatDateTime(row.fix_time) }}
               </span>
@@ -223,7 +223,7 @@
           </td>
 
           <!-- პრობლემის სტატუსი -->
-          <td class="px-4 py-3 border-b border-gray-200 align-top">
+          <td class="px-4 py-3 border-b border-gray-200 align-center">
               <span
                   class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium"
                   :class="statusBadgeClass(row.problem_status)"
@@ -244,7 +244,7 @@
 <!--          </td>-->
 
           <!-- ახალი TD: მოქმედებების ღილაკები -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-700 align-top">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-700 align-center">
             <div class="inline-flex items-center gap-1">
               <button
                   class="px-3 py-1.5 text-sm bg-blue-50 text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-100"
