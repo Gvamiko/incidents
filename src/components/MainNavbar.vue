@@ -32,7 +32,9 @@
                   class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
               >
                 ინციდენტის ფორმები
-                <span class="text-xs" :class="openForms ? 'rotate-180' : ''">▾</span>
+                <svg class="w-4 h-4 transition-transform duration-200" :class="openForms ? 'rotate-180' : ''" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
               </button>
 
               <!-- Dropdown menu -->
@@ -72,14 +74,14 @@
               @click="profileOpen = !profileOpen"
               class="flex items-center space-x-2 text-gray-600 hover:text-gray-800 focus:outline-none"
           >
-            <span class="w-9 h-9 rounded-full bg-sky-600 text-white flex items-center justify-center text-sm font-semibold uppercase">
+            <span class="w-9 h-9 rounded-full text-white flex items-center justify-center text-sm font-semibold uppercase" style="background-color: #2563eb;">
               {{ userInitials }}
             </span>
 
             <span class="text-sm font-medium hidden sm:block">{{ userName }}</span>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.114l3.71-3.884a.75.75 0 1 1 1.08 1.04ლ-4.24 4.44a.75.75 0 0 1-1.08 0ლ-4.24-4.44a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
+            <svg class="w-4 h-4 transition-transform duration-200" :class="profileOpen ? 'rotate-180' : ''" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
             </svg>
           </button>
 
@@ -116,7 +118,7 @@ import { useRoute } from 'vue-router'
 const profileOpen = ref(false)
 const openForms = ref(false)
 
-const userName = 'გიგი დოლმაზაშვილი'
+const userName = 'გიორგი თაბაგარი'
 const userPosition = 'მხარდაჭერის სამსახურის უფროსი'
 
 const userInitials = computed(() => {
@@ -167,4 +169,8 @@ onBeforeUnmount(() => {
 .slide-enter-active, .slide-leave-active { transition: transform .18s.ease, opacity .18s ease; }
 .slide-enter-from { transform: translateY(-4px); opacity: 0; }
 .slide-leave-to { transform: translateY(-4px); opacity: 0; }
+
+nav {
+  font-family: 'FiraGO', sans-serif;
+}
 </style>
