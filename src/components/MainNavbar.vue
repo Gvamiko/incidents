@@ -46,7 +46,7 @@
                     to="/forms/Shutdown"
                     class="block px-4 py-2.5 text-sm hover:bg-gray-50"
                 >
-                  ძაბვა
+                  ენერგეტიკის დეპარტამენტი
                 </router-link>
 
                 <router-link

@@ -7,7 +7,7 @@
           <h1 class="text-3xl font-bold text-gray-900">
             ავარიულ გათიშვებისა და დაბალი ძაბვების აღიცხვის ჟურნალი
           </h1>
-          <p class="text-sm text-gray-500 mt-1">
+          <p class="text-sm text-gray-500 mt-1 font-bold">
             ჯამში {{ filteredRows.length }} ჩანაწერი
           </p>
         </div>
@@ -143,14 +143,14 @@
             აღმოფხვრის დრო
           </th>
           <th class="px-4 py-3 text-left font-semibold whitespace-nowrap border-b border-gray-300">
-            პრობლემის სტატუსი
+            სტატუსი
           </th>
 <!--          <th class="px-4 py-3 text-left font-semibold whitespace-nowrap border-b border-gray-300">-->
 <!--            შენიშვნა-->
 <!--          </th>-->
           <!-- ახალი სვეტი: მოქმედებები -->
           <th class="px-4 py-3 text-left font-semibold whitespace-nowrap border-b border-gray-300">
-            მოქმედებები
+            ქმედება
           </th>
         </tr>
         </thead>
@@ -184,9 +184,10 @@
 
           <!-- გამგზავნი -->
           <td class="px-4 py-3 border-b border-gray-200 text-gray-800 whitespace-nowrap align-top">
-            {{ row.sender_fullname }}
+            <span class="text-green-700 font-bold">{{ row.sender_fullname }}</span>
             <br>
-            {{ row.receiver_fullname }}
+            <br>
+            <span class="text-blue-700 font-bold">{{ row.receiver_fullname }}</span>
           </td>
 
           <!-- მიმღები -->
@@ -195,7 +196,7 @@
 <!--          </td>-->
 
           <!-- დაზიანების ტიპი -->
-          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-top min-w-[150px]">
+          <td class="px-4 py-3 border-b border-gray-200 text-gray-800 align-top min-w-[200px]">
             <div class="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 border border-amber-100">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
               <span class="text-sm font-medium text-amber-800">
@@ -249,16 +250,17 @@
                   class="px-3 py-1.5 text-sm bg-blue-50 text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-100"
                   @click="openViewModal(row)"
               >
-                დათვალიერება
+
+                <img src="../../assets/img/icons/viewer.png" alt="viewer icon" class="w-8">
 
               </button>
-              <button
-                  type="button"
-                  class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border border-red-200 text-red-600 hover:bg-red-50"
-                  @click="deleteRow(row)"
-              >
-                წაშლა
-              </button>
+<!--              <button-->
+<!--                  type="button"-->
+<!--                  class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border border-red-200 text-red-600 hover:bg-red-50"-->
+<!--                  @click="deleteRow(row)"-->
+<!--              >-->
+<!--                წაშლა-->
+<!--              </button>-->
             </div>
           </td>
         </tr>
@@ -286,7 +288,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { getShutdownData, saveShutdownData } from '../../utils/shutdownStorage'
+import { getShutdownData, saveShutdownData } from '../../utils/shutdownStorage.js'
 import ViewModal from '../../components/Shutdown/ViewModal.vue'
 
 const router = useRouter()
